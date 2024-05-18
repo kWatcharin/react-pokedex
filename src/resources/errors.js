@@ -1,0 +1,1 @@
+export const submitfail = "submit fail";
