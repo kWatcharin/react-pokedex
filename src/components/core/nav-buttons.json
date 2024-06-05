@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "name": "home",
+        "to": "/"
+    },
+    {
+        "id": 2,
+        "name": "pokedex",
+        "to": "/pokedex"
+    },
+    {
+        "id": 3,
+        "name": "user",
+        "to":"/user"
+    },
+    {
+        "id": 4,
+        "name": "info",
+        "to": "/info"
+    },
+    {
+        "id": 5,
+        "name": "version",
+        "to": "/version"
+    }
+]
