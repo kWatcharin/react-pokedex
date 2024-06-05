@@ -1,10 +1,8 @@
 import { NavLink } from "react-router-dom";
 import PropTypes from 'prop-types';
 
-import navButtons from './nav-buttons.json';
 
-
-export default function Navbuttons({ isDesktop }) {
+export default function Navbuttons({ isDesktop, navButtonsData }) {
   let ulClass;
   let liClass;
 
@@ -20,10 +18,13 @@ export default function Navbuttons({ isDesktop }) {
     <>
       <ul className={ulClass}>
         {
-          navButtons.map(navButton => (
-            <li className={liClass} key={navButton.id}>
-              <NavLink to={navButton.to} className="text-rose-300 text-lg font-bold hover:text-rose-400 capitalize">
-                { navButton.name }
+          navButtonsData.map(navButtonData => (
+            <li className={liClass} key={navButtonData.id}>
+              <NavLink 
+                to={navButtonData.to} 
+                className="text-rose-300 text-lg font-bold hover:text-rose-400 capitalize"
+              >
+                { navButtonData.name }
               </NavLink>
             </li>
           ))
@@ -35,5 +36,6 @@ export default function Navbuttons({ isDesktop }) {
 
 
 Navbuttons.prototype = {
-  isDesktop: PropTypes.bool.isRequired
+  isDesktop: PropTypes.bool.isRequired,
+  navButtonsData: PropTypes.array.isRequired
 }

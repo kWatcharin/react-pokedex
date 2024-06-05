@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
 import pokeLogo from '../../assets/pokeball-logo.png'
+import navButtonsData from './nav-buttons.json';
 import Navbuttons from "./Navbuttons";
 
 
@@ -34,7 +35,7 @@ export default function Navbar() {
                 strokeLinejoin="round" 
                 strokeWidth="2" 
                 viewBox="0 0 24 24"
-                className="w-6 h-6"  
+                className="w-6 h-6 text-rose-300 hover:text-rose-400"  
               >
                 <path d="M4 6h16M4 12h16M4 18h16M4"></path>
               </svg>
@@ -42,11 +43,19 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Menu */}
-          <Navbuttons isDesktop={true} />
+          <Navbuttons 
+            isDesktop={true} 
+            navButtonsData={navButtonsData}
+          />
         </div>
 
         { 
-          isMenuOpen ? (<Navbuttons isDesktop={false} />): null /* Mobile Menu */
+          isMenuOpen ? (
+            <Navbuttons 
+              isDesktop={false} 
+              navButtonsData={navButtonsData} 
+            />
+          ): null /* Mobile Menu */
         } 
       </nav>
     </>
